@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}Photo Skin Doctor{% endblock %}
+{% block head %}
+{{ super() }}
+
+{% endblock %}
+
+{% block page_content %}
+
+<script src="{{ url_for('static', path='/js/cam.js') }}"></script>
+
+<main role="main" class="container overflow-hidden">
+    <div id="top">
+        <!-- <h1>Photo Skin Docter</h1> -->
+        <!-- <p></p> -->
+        <p>
+        안녕하세요. AI 피부 질환 진단 서비스 Photo Skin Doctor입니다.
+        </p>
+        <p>
+        피부 사진을 업로드 하시면 Photo Skin Doctor가 피부 질환을 진단해드립니다. (Only images smaller than 1MB can be uploaded.)
+        </p>
+    </div>
+    <div class="row">
+
+        <div class="col-md-4 col-0 text-center">
+            <div class="col-12 up-area">
+                <h1>Image Upload</h1>
+                <input type="file" name="file" id="file">
+                <!-- Drag and Drop container-->
+                <div class="upload-area" id="uploadfile">
+                    <h2 id="howto">Drag and Drop file here<br />Or<br />Click to Upload</h2>
+                    <br>
+                    <br>
+                    <button class="camButton" onclick="cam()">Camera On</button>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="colorpalette">
+                    <h3></h3>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-4 col-0 text-center" >
+            <div class="col-12 up-area">
+                <h1>피부 사진</h1>
+                <input type="file" name="file" id="file_style">
+                <!-- Drag and Drop container-->
+                <!-- <div class="upload-area" id="uploadfile_style"> -->
+                    <h2 id="howto_style"></h2>
+                    <div id="result" class="row">
+                        <div id="original" class="col-12">
+                        </div>
+                    </div>
+                    <!-- <button type="submit" class="box_button">Upload</button> -->
+                <!-- </div> -->
+            </div>
+
+            <div class="col-12">
+                <div class="colorpalette">
+                    <!-- <h3 id="result"></h3> -->
+                    <div id="result_style" class="row">
+                        <div id="original_style" class="col-12">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-4 col-0 text-center" >
+            <div class="col-12 up-area">
+                <h1>예측 결과</h1>
+                <div class="upload-area" id="result_transfer">
+                    <h3 id="pred"></h3>
+                    <!-- <button type="submit" class="box_button">Result</button> -->
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="colorpalette">
+                    <h3></h3>
+                    <div id="result_transfer_image" class="row">
+                        <div id="result_original_image" class="col-12">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</main><!-- /.container -->
+
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+
+<script type="module" src="{{ url_for('static', path='/js/dragdrop.js') }}"></script>
+
+{% endblock %}
