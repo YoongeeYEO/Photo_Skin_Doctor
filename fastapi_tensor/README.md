@@ -15,3 +15,21 @@ pip install -r requirements.txt
 ```python
 python ./main.py
 ```
+
+### Web UI 실행
+```
+http://127.0.0.1:8000에 접속
+드래그 앤 드랍을 통해 파일을 업로드 하거나,
+Camera On 버튼을 통해 opencv를 이용하여 캠으로 환부 캡쳐
+```
+
+### 이미지 캡쳐 방법
+```
+opencv를 이용하여 카메라가 나오면 키보드 "c"를 눌러 이미지 캡쳐
+키보드 "q"를 누르면 opencv가 종료되며 이미지 분류가 실행됨
+```
+
+### FastAPI 종료 방법
+```
+터미널에서 ctrl+c를 눌러 종료
+```
